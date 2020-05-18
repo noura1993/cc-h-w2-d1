@@ -13,4 +13,13 @@ class Team
         @players.push(player)
     end
 
+    def check_player_exists (player)
+        @players.each{ |current_player| 
+        if (current_player == player)
+             return true
+        end
+        }
+        return false
+    end
+
 end

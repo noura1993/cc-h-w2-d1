@@ -32,4 +32,12 @@ class TestTeam < MiniTest::Test
         assert_equal(["Mohamed Salah", "Roberto Firmino"], @team.players())
     end
 
+    def test_check_player_exists__true
+        assert_equal(true, @team.check_player_exists("Mohamed Salah"))
+    end
+
+    def test_check_player_exists__false
+        assert_equal(false, @team.check_player_exists("Mane"))
+    end
+
 end
