@@ -1,6 +1,6 @@
 class Team
 
-    attr_reader :name, :players
+    attr_reader :name, :players, :points
     attr_accessor :coach
 
     def initialize (name, players, coach)
@@ -21,6 +21,10 @@ class Team
         end
         }
         return false
+    end
+
+    def add_match_result (won)
+        @points += 3 if won
     end
 
 end

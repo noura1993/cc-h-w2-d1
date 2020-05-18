@@ -40,4 +40,22 @@ class TestTeam < MiniTest::Test
         assert_equal(false, @team.check_player_exists("Mane"))
     end
 
+    def test_team_won
+        @team.add_match_result(true)
+        assert_equal(3, @team.points)
+    end
+
+    def test_team_lost
+        @team.add_match_result(false)
+        assert_equal(0, @team.points)
+    end
+
+    def test_team_won_or_lost__multiple_matches
+        @team.add_match_result(true)
+        @team.add_match_result(true)
+        @team.add_match_result(false)
+        @team.add_match_result(true)
+        assert_equal(9, @team.points)
+    end
+
 end
