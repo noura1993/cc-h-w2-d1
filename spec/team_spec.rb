@@ -27,4 +27,9 @@ class TestTeam < MiniTest::Test
         assert_equal("Noura", @team.coach())
     end
 
+    def test_add_new_player
+        @team.add_player("Roberto Firmino")
+        assert_equal(["Mohamed Salah", "Roberto Firmino"], @team.players())
+    end
+
 end
