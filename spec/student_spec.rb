@@ -6,37 +6,34 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 class TestStudent < MiniTest::Test
 
+    def setup
+        @student = Student.new("Noura", "E40")
+    end
+
     def test_get_name
-        student = Student.new("Noura", "E40")
-        assert_equal("Noura", student.name())
+        assert_equal("Noura", @student.name())
     end
 
     def test_get_cohort
-        student = Student.new("Noura", "E40")
-        assert_equal("E40", student.cohort())
+        assert_equal("E40", @student.cohort())
     end
 
     def test_set_name
-        student = Student.new("Noura", "E40")
-        student.set_name("Alice")
-        assert_equal("Alice", student.name())
+        @student.set_name("Alice")
+        assert_equal("Alice", @student.name())
     end
 
     def test_set_cohort
-        student = Student.new("Noura", "E40")
-        student.set_cohort("E39")
-        assert_equal("E39", student.cohort())
+        @student.set_cohort("E39")
+        assert_equal("E39", @student.cohort())
     end
 
     def test_talk
-        student = Student.new("Noura", "E40")
-        assert_equal("I can talk", student.talk())
+        assert_equal("I can talk", @student.talk())
     end
 
     def test_say_favourite_language
-        student = Student.new("Noura", "E40")
-        assert_equal("I love Ruby", student.say_favourite_language("Ruby"))
+        assert_equal("I love Ruby", @student.say_favourite_language("Ruby"))
     end
-
 
 end
