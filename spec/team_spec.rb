@@ -21,4 +21,10 @@ class TestTeam < MiniTest::Test
     def test_get_team_coach
         assert_equal("Jurgen Klopp", @team.coach())
     end
+
+    def test_update_team_coach
+        @team.set_coach("Noura")
+        assert_equal("Noura", @team.coach())
+    end
+
 end
